@@ -1,4 +1,5 @@
 Day 2020-11-20
+
 1. React项目搭建 npx create-react-app name
 2. Antd组件库导入
 3. git远程仓库创建及连接:
@@ -16,3 +17,13 @@ Day 2020-11-20
     3. git branch 查看当前分支
     4. git checkout -b dev origin/dev 生成本地dev分支
     5. git pull (origin dev) 拉取代码
+
+Day 2020-11-21
+
+1. 配置按需打包工具：react-app-rewired plugin-import
+2. 自定义react主题
+
+Day 2020-12-7
+
+1. 配置路由
+2. 创建登录界面(样式设置、Form表单搭建)
