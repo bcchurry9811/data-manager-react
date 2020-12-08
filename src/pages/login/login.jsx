@@ -12,32 +12,33 @@ export default class Login extends Component {
             <div className='login'>
                 <header className='login-header'>
                     <img src={logo} alt='logo' />
-                    <h1>React项目： 后台管理系统</h1>
+                    <h1>数据管理系统</h1>
                 </header>
                 <section className='login-content'>
                     <h2>用户登录</h2>
                     <Form
-                        name="basic"
+                        name="normal_login"
+                        className="login-form"
                         initialValues={{ remember: true }}
                     >
                         <Form.Item
-                            label="用户名"
                             name="username"
-                            rules={[{ required: true, message: 'Please input your username!' }]}
+                            rules={[{ required: true, message: 'Please input your Username!' }]}
                         >
-                            <Input />
+                            <Input placeholder="Username" />
                         </Form.Item>
-
                         <Form.Item
-                            label="密码"
                             name="password"
-                            rules={[{ required: true, message: 'Please input your password!' }]}
+                            rules={[{ required: true, message: 'Please input your Password!' }]}
                         >
-                            <Input.Password />
+                            <Input
+                                type="password"
+                                placeholder="Password"
+                            />
                         </Form.Item>
 
-                        <Form.Item >
-                            <Button type="primary" htmlType="submit">
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" className="login-form-button">
                                 登录
                             </Button>
                         </Form.Item>
