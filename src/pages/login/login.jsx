@@ -4,12 +4,16 @@ import logo from './images/logo.png';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
+const Item = Form.Item; // 不能卸写在import之前
+
 /**
  * 登陆的路由组件
  */
 export default class Login extends Component {
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        const { username, password } = event;
+        console.log(' 点击了登陆: ', 'username = ', username, 'password = ', password);
         return;
     };
 
@@ -28,14 +32,14 @@ export default class Login extends Component {
                         initialValues={{ remember: true }}
                         onFinish={this.handleSubmit}
                     >
-                        <Form.Item
+                        <Item
                             prefix={<LockOutlined className="site-form-item-icon" />}
                             name="username"
                             rules={[{ required: true, message: '请输入用户名!' }]}
                         >
-                            <Input placeholder="Username" prefix={<UserOutlined className="site-form-item-icon" />} />
-                        </Form.Item>
-                        <Form.Item
+                            <Input placeholder="用户名" prefix={<UserOutlined className="site-form-item-icon" />} />
+                        </Item>
+                        <Item
 
                             name="password"
                             rules={[{ required: true, message: '请输入密码!' }]}
@@ -43,18 +47,23 @@ export default class Login extends Component {
                             <Input
                                 prefix={<LockOutlined className="site-form-item-icon" />}
                                 type="password"
-                                placeholder="Password"
+                                placeholder="密码"
                             />
-                        </Form.Item>
+                        </Item>
 
-                        <Form.Item>
+                        <Item>
                             <Button type="primary" htmlType="submit" className="login-form-button">
                                 登录
                             </Button>
-                        </Form.Item>
+                        </Item>
                     </Form>
                 </section>
             </div>
         )
     }
 }
+
+/**
+ * 1. 前台表单验证
+ * 2. 收集表单输入数据
+ */
